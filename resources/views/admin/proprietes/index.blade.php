@@ -3,7 +3,7 @@
 @section('content')
     
         <h1>Liste des bien</h1>
-        <table class="table table-striped">
+        <table class="table table-striped w-50">
             <thead>
                 <tr>
                     <th>ID</th>
