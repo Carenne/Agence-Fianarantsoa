@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\propriete;
+use App\Http\Requests\RequettePourPropriete;
 
 class ProprieteControleur extends Controller
 {
@@ -23,13 +24,16 @@ class ProprieteControleur extends Controller
      */
     public function create()
     {
-        //
+        $propriete = new propriete();
+        return view('admin.proprietes.form', [
+            'propriete' => new propriete(),
+       ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(RequettePourPropriete $request)
     {
         //
     }
