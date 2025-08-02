@@ -1,9 +1,15 @@
 @extends('admin.admin')
 
+@section('title', 'Toutes les biens')
+
 @section('content')
-    
-        <h1>Liste des bien</h1>
-        <table class="table table-striped w-50">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <h1>@yield('title')</h1>
+            <a href="{{ route('admin.propriete.create') }}" class="btn btn-primary">Ajouter un bien</a>
+        </div>
+        
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>ID</th>

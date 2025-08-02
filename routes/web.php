@@ -15,14 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-  //  return view('/admin/proprietes/index');
-    return view('/admin/proprietes/index', [
-        'proprietes' => \App\Models\propriete::all()
-    ]);
-   // return view('welcome');
+     return view('/admin/proprietes/index', [ 'proprietes' => \App\Models\propriete::all()]);
 
 });
 
 Route::prefix('admin')->name('admin.')->group(function(){
     Route::resource('propriete', \App\Http\Controllers\Admin\ProprieteControleur::class)->except(['show']);
+    /**
+     * Elle crée automatiquement 6 routes pour gérer les propriete (biens immobiliers),
+     *avec le contrôleur ProprieteControleur situé dans App\Http\Controllers\Admin,
+     *mais sans créer la route show (grâce à ->except(['show'])).
+    */
 });
