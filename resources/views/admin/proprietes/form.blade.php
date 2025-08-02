@@ -12,8 +12,15 @@
 
         @method($propriete->exists ? 'PUT' : 'POST') 
 
-        @include('partage.input', ['label' => 'Titre','name' => 'titre','value' => $propriete->titre])
-
+        <div class="row">
+            <div class="col row">
+                @include('partage.input', ['class'=>'col', 'label' => 'Titre','name' => 'titre','value' => $propriete->titre])
+            </div>
+            <div class="col row">
+                @include('partage.input', ['class'=>'col', 'label' => 'surface','name' => 'surface','value' => $propriete->surface])
+            </div>
+        </div>
+    
         <div>
             <button class="btn btn-primary">
                 @if($propriete->exists)
